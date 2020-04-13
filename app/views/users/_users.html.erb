@@ -3,7 +3,7 @@
     <% users.each do |user| %>
       <% unless user.admin %>
       <li class="media">
-        <img class="mr-2 rounded" src="app/assets/images/human.jpg" alt="人間">
+        <%= image_tag 'human.jpg', :size => '50x30' %>
         <div class="media-body">
           <div>
             <%= user.name %>

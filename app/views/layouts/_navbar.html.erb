@@ -1,6 +1,6 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="/"><img src="assets/images/logo.png" width="10" height="10" alt="ロゴ"></a>
+    <a class="navbar-brand" href="/"><%= image_tag 'logo.png', :size => '80x50' %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,7 +12,7 @@
           <a href="#", class="nav-link dropdown-toggle" data-toggle="dropdown">Menu</a>
           <ul class="dropdown-menu dropdown-menu-right">
             <li class="dropdown-item"><a href="#" class="dropdown-link">投稿一覧</a></li>
-            <li class="dropdown-item"><a href="#" class="dropdown-link">新規投稿</a></li>
+            <li class="dropdown-item"><%= link_to 'Newpost', newpost_path %></li>
             <li class="dropdown-item"><a href="#" class="dropdown-link">ユーザ検索</a></li>
             <li class="dropdown-divider"></li>
             <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>

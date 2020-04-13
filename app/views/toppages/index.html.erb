@@ -1,5 +1,8 @@
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  
+  <%= render 'microposts/microposts', microposts: @microposts %>
+  
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">

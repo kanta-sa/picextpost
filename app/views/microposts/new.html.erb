@@ -1,0 +1,10 @@
+<img src="assets/images/human.jpg" alt="Userのトップ画">
+
+<%= form_with(model: @micropost, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.label :content, 'Newpost' %>
+    <%= f.text_area :content, class: 'form-control', rows: 5 %>
+  </div>
+  
+  <%= f.submit 'Post', class: 'justify-content-end btn btn-sm btn-primary btn-block' %>
+<% end %>
