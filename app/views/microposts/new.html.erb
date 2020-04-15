@@ -1,4 +1,5 @@
-<img src="assets/images/human.jpg" alt="Userのトップ画">
+<%= image_tag 'human.jpg', :size => '50x30' %>
+<%= current_user.name %>
 
 <%= form_with(model: @micropost, local: true) do |f| %>
   <div class="form-group">

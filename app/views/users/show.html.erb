@@ -1,6 +1,37 @@
-<h3><%= @user.name %></h3>
+<div>
+  <%= image_tag  'human.jpg', :size => '50x30' %>
+  <%= @user.name %>のユーザ詳細ページ
+</div>
+
+<div class="container" style="margin:10px;">
+  <div class="border" style="padding:20px;">
+    <p>ユーザ名: <%= @user.name %></p>
+    <p>年齢: <%= @user.age %></p>
+    <p>メールアドレス: <%= @user.email %></p>
+    <p>出身地: <%= Prefecture.find_by(id: @user.prefecture_id).name %></p>
+    <p>趣味: <%= @user.hobby %></p>
+    <div class="text-right">
+      <%= render 'relationships/follow_button', user: @user %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<% if current_user == @user %>
+  <div class="text-right">
+    <%= link_to 'ユーザ情報の編集', edit_user_path(@user), class: 'btn btn-lg btn-primary justify-text-end'%>
+  </div>
+
+  <div class="text-right">
+    <a href="#" class='btn btn-lg btn-danger'>退会ページ</a>
+  </div>
+<% end %>
 
 <ul class="nav nav-tabs nav-justified mb-3">
-  <li class="nav-item"><a href="#" class="nav-link">Followings</a></li>
-  <li class="nav-item"><a href="#" class="nav-link">Followers</a></li>
+  <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link">Followings <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+  <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link">Followers <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
 </ul>
+
+
