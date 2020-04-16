@@ -1,0 +1,229 @@
+<div class="text-center">
+  <h1>出身地からユーザを探そう！</h1>
+</div>
+
+
+
+  <table class="table table-bordered">
+    <tr>
+      <th>北海道・東北</th>
+      <% @prefectures_a.each do |prefecture_a| %>
+        <% if prefecture_a.id == 1 %>
+        <td><%= link_to '北海道', prefecture_a %></td>
+      
+        <% elsif prefecture_a.id == 2 %>
+        <td><%= link_to '青森県', prefecture_a %></td>
+      
+        <% elsif prefecture_a.id == 3 %>
+        <td><%= link_to '岩手県', prefecture_a %></td>
+      
+        <% elsif prefecture_a.id == 4 %>
+        <td><%= link_to '宮城県', prefecture_a %></td>
+      
+        <% elsif prefecture_a.id == 5 %>
+        <td><%= link_to '秋田県', prefecture_a %></td>
+      
+        <% elsif prefecture_a.id == 6 %>
+        <td><%= link_to '山形県', prefecture_a %></td>
+      
+        <% elsif prefecture_a.id == 7 %>
+        <td><%= link_to '福島県', prefecture_a %></td>
+        <% end %>
+      <%end %>
+      
+      <td></td>
+    </tr>
+    <tr>
+      <th>関東</th>
+      <% @prefectures_b.each do |prefecture_b| %>
+        <% if prefecture_b.id == 13 %>
+        <td><%= link_to '東京都', prefecture_b %></td>
+      
+        <% elsif prefecture_b.id == 14 %>
+        <td><%= link_to '神奈川県', prefecture_b %></td>
+      
+        <% elsif prefecture_b.id == 11 %>
+        <td><%= link_to '埼玉県', prefecture_b %></td>
+      
+        <% elsif prefecture_b.id == 12 %>
+        <td><%= link_to '千葉県', prefecture_b %></td>
+      
+        <% elsif prefecture_b.id == 8 %>
+        <td><%= link_to '茨城県', prefecture_b %></td>
+      
+        <% elsif prefecture_b.id == 9 %>
+        <td><%= link_to '栃木県', prefecture_b %></td>
+      
+        <% elsif prefecture_b.id == 10 %>
+        <td><%= link_to '群馬県', prefecture_b %></td>
+        <% end %>
+      <%end %>
+
+      <td></td>
+    </tr>
+    <tr>
+      <th>甲信越</th>
+      <% @prefectures_c.each do |prefecture_c| %>
+        <% if prefecture_c.id == 15 %>
+        <td><%= link_to '新潟県', prefecture_c %></td>
+      
+        <% elsif prefecture_c.id == 19 %>
+        <td><%= link_to '長野県', prefecture_c %></td>
+      
+        <% elsif prefecture_c.id == 20 %>
+        <td><%= link_to '山梨県', prefecture_c %></td>
+        <% end %>
+      <% end %>
+      
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>東海</th>
+      <% @prefectures_d.each do |prefecture_d| %>
+        <% if prefecture_d.id == 21 %>
+        <td><%= link_to '愛知県', prefecture_d %></td>
+      
+        <% elsif prefecture_d.id == 22 %>
+        <td><%= link_to '岐阜県', prefecture_d %></td>
+      
+        <% elsif prefecture_d.id == 23 %>
+        <td><%= link_to '静岡県', prefecture_d %></td>
+        
+        <% elsif prefecture_d.id == 24 %>
+        <td><%= link_to '三重県', prefecture_d %></td>
+        <% end %>
+      <% end %>
+
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>北陸</th>
+      <% @prefectures_e.each do |prefecture_e| %>
+        <% if prefecture_e.id == 16 %>
+        <td><%= link_to '富山県', prefecture_e %></td>
+      
+        <% elsif prefecture_e.id == 17 %>
+        <td><%= link_to '石川県', prefecture_e %></td>
+      
+        <% elsif prefecture_e.id == 18 %>
+        <td><%= link_to '福井県', prefecture_e %></td>
+        <% end %>
+      <% end %>
+
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>関西</th>
+      <% @prefectures_f.each do |prefecture_f| %>
+        <% if prefecture_f.id == 25 %>
+        <td><%= link_to '滋賀県', prefecture_f %></td>
+      
+        <% elsif prefecture_f.id == 26 %>
+        <td><%= link_to '京都府', prefecture_f %></td>
+      
+        <% elsif prefecture_f.id == 27 %>
+        <td><%= link_to '大阪府', prefecture_f %></td>
+      
+        <% elsif prefecture_f.id == 28 %>
+        <td><%= link_to '兵庫県', prefecture_f %></td>
+      
+        <% elsif prefecture_f.id == 29 %>
+        <td><%= link_to '奈良県', prefecture_f %></td>
+      
+        <% elsif prefecture_f.id == 30 %>
+        <td><%= link_to '和歌山県', prefecture_f %></td>
+        <% end %>
+      <%end %>
+
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>中国</th>
+      <% @prefectures_g.each do |prefecture_g| %>
+        <% if prefecture_g.id == 31 %>
+        <td><%= link_to '鳥取県', prefecture_g %></td>
+      
+        <% elsif prefecture_g.id == 32 %>
+        <td><%= link_to '島根県', prefecture_g %></td>
+      
+        <% elsif prefecture_g.id == 33 %>
+        <td><%= link_to '岡山県', prefecture_g %></td>
+        
+        <% elsif prefecture_g.id == 34 %>
+        <td><%= link_to '広島県', prefecture_g %></td>
+        
+        <% elsif prefecture_g.id == 35 %>
+        <td><%= link_to '山口県', prefecture_g %></td>
+        <% end %>
+      <% end %>
+
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>四国</th>
+      <% @prefectures_h.each do |prefecture_h| %>
+        <% if prefecture_h.id == 36 %>
+        <td><%= link_to '徳島県', prefecture_h %></td>
+      
+        <% elsif prefecture_h.id == 37 %>
+        <td><%= link_to '香川県', prefecture_h %></td>
+      
+        <% elsif prefecture_h.id == 38 %>
+        <td><%= link_to '愛媛県', prefecture_h %></td>
+        
+        <% elsif prefecture_h.id == 39 %>
+        <td><%= link_to '高知県', prefecture_h %></td>
+        <% end %>
+      <% end %>
+
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>九州・沖縄</th>
+      <% @prefectures_i.each do |prefecture_i| %>
+        <% if prefecture_i.id == 40 %>
+        <td><%= link_to '福岡県', prefecture_i %></td>
+      
+        <% elsif prefecture_i.id == 41 %>
+        <td><%= link_to '佐賀県', prefecture_i %></td>
+      
+        <% elsif prefecture_i.id == 42%>
+        <td><%= link_to '長崎県', prefecture_i %></td>
+      
+        <% elsif prefecture_i.id == 43 %>
+        <td><%= link_to '熊本県', prefecture_i %></td>
+      
+        <% elsif prefecture_i.id == 44 %>
+        <td><%= link_to '大分県', prefecture_i %></td>
+      
+        <% elsif prefecture_i.id == 45 %>
+        <td><%= link_to '宮崎県', prefecture_i %></td>
+      
+        <% elsif prefecture_i.id == 46 %>
+        <td><%= link_to '鹿児島県', prefecture_i %></td>
+        
+        <% elsif prefecture_i.id == 47 %>
+        <td><%= link_to '沖縄県', prefecture_i %></td>
+        <% end %>
+      <%end %>
+    </tr>
+  </table>
+
+

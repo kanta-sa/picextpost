@@ -13,7 +13,7 @@
           <ul class="dropdown-menu dropdown-menu-right">
             <li class="dropdown-item"><a href="#" class="dropdown-link">投稿一覧</a></li>
             <li class="dropdown-item"><%= link_to 'Newpost', newpost_path %></li>
-            <li class="dropdown-item"><a href="#" class="dropdown-link">ユーザ検索</a></li>
+            <li class="dropdown-item"><%= link_to 'ユーザ検索', search_path %></li>
             <li class="dropdown-divider"></li>
             <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
           </ul>

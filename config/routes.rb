@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   get 'newpost', to: 'microposts#new'
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  
+  get 'search', to: 'prefectures#index'
+  resources :prefectures, only: [:show]
 end

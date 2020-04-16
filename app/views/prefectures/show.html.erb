@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1><%= @prefecture.name %>出身のユーザ一覧</h1>
+</div>
+
+<% if @users.any? %>
+<%= render 'users/users', users: @users %>
+
+<% else %>
+  <p>残念ながら現在は該当するユーザがいないようです。</p>
+  <%= link_to 'ユーザ検索に戻る', search_path, class: 'btn btn-primary btn-lg'%>
+<% end %>
+
