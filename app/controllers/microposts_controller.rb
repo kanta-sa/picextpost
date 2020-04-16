@@ -25,6 +25,10 @@ class MicropostsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def timeline
+    @microposts = current_user.feed_microposts.order(id: :desc).page(params[:page])
+  end
+  
   private
   
   def micropost_params
@@ -34,7 +38,7 @@ class MicropostsController < ApplicationController
   def correct_user
     @micropost = current_user.microposts.find_by(id: params[:id])
     unless @micropost
-      redirect_to root_url
+      redirect_to root_url #4/16現在、ユーザの投稿はトップページに表示されている
     end
   end
 end

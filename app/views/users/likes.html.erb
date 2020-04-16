@@ -8,4 +8,4 @@
   <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link">お気に入り<span class="badge badge-secondary"><%= @count_favorites %></a></li>
 </ul>
 
-<%= render 'users', users: @followers %>
+<%= render 'users_for_favorite', microposts: @favorites %>

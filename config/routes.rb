@@ -11,13 +11,23 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      
+      get :likes
     end
   end
   
   get 'newpost', to: 'microposts#new'
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy] do
+    collection do
+      get :timeline
+    end
+  end
+  
   resources :relationships, only: [:create, :destroy]
   
   get 'search', to: 'prefectures#index'
   resources :prefectures, only: [:show]
+  
+  #お気に入り昨日
+  resources :favorites, only: [:create, :destroy]
 end

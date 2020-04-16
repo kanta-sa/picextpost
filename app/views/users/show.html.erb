@@ -16,8 +16,9 @@
   </div>
 </div>
 
-
-
+<div class="container" style="margin: 60px 0px;">
+  <%= render 'microposts/microposts', microposts: @user.microposts %>
+</div>
 
 <% if current_user == @user %>
   <div class="text-right">
@@ -32,6 +33,7 @@
 <ul class="nav nav-tabs nav-justified mb-3">
   <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link">Followings <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
   <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link">Followers <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
+  <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link">お気に入り<span class="badge badge-secondary"><%= @count_favorites %></a></li>
 </ul>
 
 
