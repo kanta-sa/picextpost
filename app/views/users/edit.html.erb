@@ -15,7 +15,7 @@
   
     <div class="form-group">
       <%= f.label :age, 'Age' %>
-      <%= f.select :age, [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30] %>
+      <%= f.select :age, (16..60) %>
     </div>
     
     <div class="form-group">
@@ -26,6 +26,11 @@
     <div class="form-group">
       <%= f.label :hobby, 'Hobby' %>
       <%= f.text_field :hobby, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :email, 'Email' %>
+      <%= f.email_field :email, class: 'form-control' %>
     </div>
   
     <%= f.submit 'Update', class: 'btn btn-primary btn-block' %>

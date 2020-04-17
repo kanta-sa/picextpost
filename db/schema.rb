@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_040735) do
+ActiveRecord::Schema.define(version: 2020_04_17_042132) do
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2020_04_17_040735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "prefecture_id"
-    t.string "img"
     t.index ["prefecture_id"], name: "index_users_on_prefecture_id"
   end
 

@@ -8,7 +8,11 @@
     <p>ユーザ名: <%= @user.name %></p>
     <p>年齢: <%= @user.age %></p>
     <p>メールアドレス: <%= @user.email %></p>
-    <p>出身地: <%= Prefecture.find_by(id: @user.prefecture_id).name %></p>
+    <% if Prefecture.find_by(id: @user.prefecture_id) %>
+      <p>出身地: <%= Prefecture.find_by(id: @user.prefecture_id).name %></p>
+    <% else %>
+      <p>出身地: none</p>
+    <% end %>
     <p>趣味: <%= @user.hobby %></p>
     <div class="text-right">
       <%= render 'relationships/follow_button', user: @user %>
@@ -26,7 +30,7 @@
   </div>
 
   <div class="text-right">
-    <a href="#" class='btn btn-lg btn-danger'>退会ページ</a>
+    <%= link_to '退会ページ', withdrawal_user_path(@user), class: 'btn btn-lg btn-danger'%>
   </div>
 <% end %>
 

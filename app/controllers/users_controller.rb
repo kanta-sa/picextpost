@@ -42,6 +42,16 @@ class UsersController < ApplicationController
     end
   end
   
+  def withdrawal
+  end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = 'ユーザは正常に退会できました。'
+    redirect_to root_url
+  end
+  
   def followings
     @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
@@ -64,5 +74,9 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:name, :age, :email, :hobby, :prefecture_id,:password, :password_confirmation)
+  end
+  
+  def withdrawal_params
+    params.require(:user).permit(:password)
   end
 end

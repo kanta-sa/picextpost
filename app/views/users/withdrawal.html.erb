@@ -1,0 +1,7 @@
+<div class="text-center">
+  <h1>退会ページ</h1>
+</div>
+
+<%= image_tag 'human.jpg', :size => '50x30' %>
+
+<%= link_to "退会する", user_path, method: :delete, data: { confirm: 'You sure?' }, class: 'btn btn-danger btn-sm' %>

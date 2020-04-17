@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   get 'profile', to: 'users#show'
-  resources :users, only: [:index, :show, :create, :edit, :update] do
+  resources :users, only: [:index, :show, :create, :edit, :update, :destroy] do
     member do
       get :followings
       get :followers
       
+      get :withdrawal
       get :likes
     end
   end
@@ -30,4 +31,8 @@ Rails.application.routes.draw do
   
   #お気に入り昨日
   resources :favorites, only: [:create, :destroy]
+  
+  namespace :administrator do
+    resources :users, only: [:index]
+  end
 end
