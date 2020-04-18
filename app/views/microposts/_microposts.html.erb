@@ -8,7 +8,7 @@
     <% end %>
     <div class="media-body">
       <div>
-        <%= link_to micropost.user.name, user_path(micropost.user) %><span class="text-muted">posted at <%= micropost.created_at %></span>
+        <%= link_to micropost.user.name, user_path(micropost.user) %><span class="text-muted">posted at <%= micropost.created_at.to_s(:datetime_jp) %></span>
       </div>
       <div>
         <p><%= micropost.content %></p>
