@@ -1,7 +1,11 @@
 <ul class="list-unstyled">
   <% microposts.each do |micropost| %>
   <li class="media mb-3">
-    <%= image_tag 'human.jpg', :size => '50x30' %>
+    <% if micropost.user.image? %>
+      <%= image_tag micropost.user.image.to_s, :size => '80x80', class: 'mypage-article-img' %>
+    <% else %>
+      <%= image_tag 'human.jpg', :size => '80x80', class: 'mypage-article-img' %>
+    <% end %>
     <div class="media-body">
       <div>
         <%= link_to micropost.user.name, user_path(micropost.user) %><span class="text-muted">posted at <%= micropost.created_at %></span>

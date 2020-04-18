@@ -1,5 +1,9 @@
 <div>
-  <%= image_tag  'human.jpg', :size => '50x30' %>
+  <% if @user.image? %>
+    <%= image_tag @user.image.to_s, :size => '100x100', class: 'mypage-article-img' %>
+  <% else %>
+    <%= image_tag 'human.jpg', :size => '50x30', class: 'mypage-article-img' %>
+  <% end %>
   <%= @user.name %>のユーザ詳細ページ
 </div>
 
@@ -14,14 +18,11 @@
       <p>出身地: none</p>
     <% end %>
     <p>趣味: <%= @user.hobby %></p>
+
     <div class="text-right">
       <%= render 'relationships/follow_button', user: @user %>
     </div>
   </div>
-</div>
-
-<div class="container" style="margin: 60px 0px;">
-  <%= render 'microposts/microposts', microposts: @user.microposts %>
 </div>
 
 <% if current_user == @user %>
@@ -33,6 +34,12 @@
     <%= link_to '退会ページ', withdrawal_user_path(@user), class: 'btn btn-lg btn-danger'%>
   </div>
 <% end %>
+
+<div class="container" style="margin: 60px 0px;">
+  <%= render 'microposts/microposts', microposts: @user.microposts %>
+</div>
+
+
 
 <ul class="nav nav-tabs nav-justified mb-3">
   <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link">Followings <span class="badge badge-secondary"><%= @count_followings %></span></a></li>

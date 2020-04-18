@@ -52,4 +52,6 @@ class User < ApplicationRecord
     def favorite?(micropost)
         self.favorite_of_microposts.include?(micropost)
     end
+    
+    mount_uploader :image, ImageUploader
 end

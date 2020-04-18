@@ -18,8 +18,13 @@
             <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
           </ul>
         </li>
-        <li class="nav-item"><%= link_to 'Users', user_path(current_user), class: 'nav-link' %></li>
-        
+        <li class="nav-item"><a href="<%= user_path(current_user) %>">
+          <% if current_user.image? %>
+            <%= image_tag current_user.image.to_s, :size => '80x50', class: 'mypage-article-img' %>
+          <% else %>
+            <%= image_tag 'human.jpg', :size => '80x50', class: 'mypage-article-img' %>
+          <% end %>
+        </a></li>
         <% else %>
           <li class="nav-item"><%= link_to 'Sign up', signup_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Log in', login_path, class: 'nav-link' %></li>
