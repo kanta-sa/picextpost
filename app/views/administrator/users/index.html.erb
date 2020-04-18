@@ -11,8 +11,8 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
-    	  <td><%= user.name %></td>
-    	  <td><%= user.created_at %></td>
+    	  <td><%= link_to user.name, administrator_user_path(user) %></td>
+    	  <td><%= user.created_at.to_s(:datetime_jp) %></td>
       </tr>
     <% end %>
   </tbody>

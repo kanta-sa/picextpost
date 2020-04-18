@@ -1,0 +1,8 @@
+<% @microposts.each do |micropost| %>
+
+<span class="text-muted">posted at <%= micropost.created_at.strftime("%Y/%m/%d") %></span></br>
+<%= micropost.content %>
+
+<%= link_to 'このお知らせを削除する', administrator_micropost_path(micropost), method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, class: 'btn btn-danger' %></br>
+
+<% end %>

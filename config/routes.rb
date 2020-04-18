@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :destroy]
   
   namespace :administrator do
-    resources :users, only: [:index]
+    resources :users, only: [:index, :show, :destroy]
+    resources :microposts, only: [:index, :new, :create, :destroy]
   end
 end

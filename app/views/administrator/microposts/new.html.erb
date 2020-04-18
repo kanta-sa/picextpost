@@ -1,0 +1,9 @@
+<%= current_user.name %>
+
+<%= form_with(model: @micropost, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.label :content, 'お知らせ' %>
+    <%= f.text_area :content, class: 'form-control', rows: 5 %>
+  </div>
+  <%= f.submit 'Post', class: 'justify-content-end btn btn-sm btn-primary btn-block' %>
+<% end %>
