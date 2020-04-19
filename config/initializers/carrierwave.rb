@@ -9,9 +9,9 @@ CarrierWave.configure do |config|
     config.fog_directory  = 'kantabucket'
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: 'AKIAVA62S7C6SQGVGWP2',
-      aws_secret_access_key: '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',
-      region: 'us-east-2',
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      region: ENV['S3_REGION'],
       path_style: true
     }
   else
