@@ -63,5 +63,5 @@ gem 'fog-aws'
 gem 'rmagick', '~> 4.1', '>= 4.1.2'
 
 group :production do
-  gem 'pg', '>= 0.18', '< 2.0'
+  gem 'pg'
 end
