@@ -6,12 +6,12 @@ CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'バケット名'
+    config.fog_directory  = 'kantabucket'
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: 'AKIAVA62S7C6SQGVGWP2',
       aws_secret_access_key: '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',
-      region: 'us-east-1',
+      region: 'us-east-2',
       path_style: true
     }
   else
