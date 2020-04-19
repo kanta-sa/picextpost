@@ -3,9 +3,6 @@
 <% if logged_in? %>
   <% unless current_user.admin? %>
     <% if @user.microposts.any? %>
-      
-      <div> 
-        
         <section style="padding: 20px 60px; background-image: url(<%= asset_path('message_box.png') %>); background-size: 100% 100%;">
           <h1 class="text-center">お知らせ</h1>
           <ul>
@@ -14,8 +11,6 @@
             <% end %>
           </ul>
         </section>
-      
-      </div>
       
     <% end %>
   
@@ -105,7 +100,8 @@
   <div class="center jumbotron">
     <div class="text-center">
       <h1>Welcome to the PicextPosts</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Log in', login_path, class: 'btn btn-lg btn-primary' %></br></br>
+      <%= link_to 'Sign up', signup_path, class: 'btn btn-sm btn-primary' %>
     </div>
   </div>
   
