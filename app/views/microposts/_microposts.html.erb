@@ -1,33 +1,34 @@
-<ul class="list-unstyled">
-  <% microposts.each do |micropost| %>
-  <div class="border rounded" style="padding: 30px;">
-  <li class="media mb-3">
+<% microposts.each do |micropost| %>
+<div class="microposts-container">
+  <div class="micropost-container-left">
+    <div class="picture">
     <% if micropost.user.image? %>
       <%= image_tag micropost.user.image.to_s, :size => '80x80', class: 'mypage-article-img' %>
     <% else %>
       <%= image_tag 'human.jpg', :size => '80x80', class: 'mypage-article-img' %>
     <% end %>
-    <div class="media-body">
-      <div>
-        <%= link_to micropost.user.name, user_path(micropost.user) %><span class="text-muted">posted at <%= micropost.created_at.to_s(:datetime_jp) %></span>
-      </div>
-      <div>
-        <p><%= micropost.content %></p>
+    </div>
+    <div class="user-name">
+      <a><%= link_to micropost.user.name, user_path(micropost.user), class: "nav-link" %></a>
+    </div>
+  </div>
+  <div class="micropost-container-right">
+    <div class="posted-at-muted">
+      <p>posted at <%= micropost.created_at.to_s(:datetime_jp) %></p>
+    </div>
+    <div class="micropost-contents">
+      <p><%= micropost.content %></p>
         <% if micropost.image? %>
           <%= image_tag micropost.image.to_s, :size => '80x80', class: 'mypage-article-img' %>
         <% end %>
-      </div>
-      <div>
-        <% if current_user == micropost.user %>
-          <p class="text-right">
-          <%= link_to "Delete", micropost, method: :delete, data: { confirm: 'You sure?' }, class: 'btn btn-danger btn-sm' %>
-          </p>
-        <% else %>
-          <%= render 'favorites/favorite_button', micropost: micropost %>
-        <% end %>
-      </div>
     </div>
-  </li>
+    <% if current_user == micropost.user %>
+    <div class="delete-btn-wrapper">
+      <%= link_to "削除", micropost, method: :delete, data: { confirm: 'You sure?' }, class: 'delete-btn' %>
+    </div>
+    <% else %>
+      <%= render 'favorites/favorite_button', micropost: micropost %>
+    <% end %>
   </div>
-  <% end %>
-</ul>
+</div>
+<% end %>

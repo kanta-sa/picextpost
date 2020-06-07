@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+.relationships-container{
+  text-align: center;
+  width: 90%;
+  margin: 3% auto;
+}
+
+h1 .user-name{
+  text-decoration: none;
+  color: black;
+}
+
+.relationships-nav{
+  display: flex;
+  width: 100%;
+  margin: 5% auto;
+  border-bottom: 1px solid #888888;
+}
+
+.relationships-nav li{
+  margin: 0 auto;
+  width: 33%;
+  border-right: 1px solid #888888;
+}
+
+.relationships-nav a{
+  color: #432c02;
+}
+
+.relationships-nav .active{
+  font-weight: bold;
+}
+
+/* followings/followers */
+.follow-users-container{
+  margin:2em auto;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  display: flex;
+  width: 70%;
+}
+
+.follow-users-container:before, .follow-users-container:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.follow-users-container:before {left: 10px;}
+.follow-users-container:after {right: 10px;}
+
+.follow-users-left{
+  width: 30%;
+  margin: 0 3%;
+}
+.follow-users-right{
+  height: 100%;
+  margin: auto 0;
+}
+
+.follow-users-right h3{
+  font-weight: normal;
+  text-align: left;
+}
+
+.guide p {
+  font-size: 0.8rem;
+}
+
+.guide .nav-link{
+  color: rgba(23, 96, 160, 0.7);
+}
+
+.guide .nav-link:hover{
+  color: rgba(23, 96, 160, 1);
+}

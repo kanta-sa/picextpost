@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+.news-box{
+  position: relative;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  margin: 3% 3%;
+}
+
+.news-box::after{
+  position: absolute;
+  content: '';
+  right: -7px;
+  top: -7px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #ffdb88 #fff #ffdb88;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.news-box h1 {
+  text-align: center; 
+  font-size: 1.5rem;
+}
+
+.news-box ul{
+  padding: 1% 5%;
+  font-size: 0.9rem;
+}
+
+.news-box span{
+  margin-right: 2%;
+}
+
+
+/*投稿お気に入りランキング*/
+.toppage-favorite, .toppage-follower{
+  text-align: center;
+  margin: 5% auto 2%;
+}
+
+.favorite-table, .follower-table{
+  width: 90%;
+  margin: 2% auto;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+
+table, th, td{
+  border-collapse: collapse;
+  border: 2px solid #ccc;
+  line-height: 1.5;
+  padding: 1.5% 0;
+}
+
+.favorite-head th:first-child{
+  width: 12%;
+} 
+
+.favorite-head th:nth-child(2){
+  width: 18%;
+}
+
+.favorite-head th:nth-child(3){
+  width: 55%;
+}
+
+.favorite-head th:nth-child(4){
+  width: 15%;
+}
+
+.toppage-header{
+  text-align: center;
+  margin: 3% 0;
+}
+
+.toppage-header h1{
+  font-family: serif;
+  font-size: 3.0rem;
+}
+
+.toppage-btn-container{
+  margin: 7% 0 15%;
+}
+
+.toppage-btn{
+  text-decoration: none;
+  margin: 0 8%;
+}
+
+.toppage-btn-left{
+  color: white;
+  background-color: rgba(0, 0, 255, 0.7);
+  padding: 3% 3%;
+}
+
+.toppage-btn-right{
+  color: white;
+  background-color: rgba(51, 153, 0, 0.7);
+  padding: 3% 3%;
+}
+
+.toppage-btn-left:hover{
+  background-color: rgba(0, 0, 255, 1);
+}
+
+.toppage-btn-right:hover{
+  background-color: rgba(51, 153, 0, 1);
+}
+
+td .user-name{
+  text-decoration: none;
+  color: rgba(0, 0, 255, 0.7);
+}
+
+td .user-name:hover{
+  color: rgba(0, 0, 255, 1);
+}

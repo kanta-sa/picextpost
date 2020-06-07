@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+.nav-link{
+  text-decoration: none;
+}
+
+.user-information-container{
+  width: 90%;
+  margin: 5% auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.user-detail-left{
+  width: 73%;
+}
+
+.user-detail-right{
+  width: 22%;
+}
+
+.media-detail{
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  margin-top: 3%;
+}
+
+.media-detail ul {
+  padding-left: 2%;
+}
+
+.withdrawal-page-btn {
+  text-align: right;
+  margin-top: 3%;
+}
+
+.withdrawal-page-btn a{
+  color: rgba(204, 0, 0, 0.5);
+}
+
+.withdrawal-page-btn a:hover{
+  color: rgba(204, 0, 0, 1);
+}
+
+.media-detail li{
+  margin: 3% 0;
+}
+
+.media-detail a{
+  color: #888;
+}
+
+.media-detail a:hover{
+  color: black;
+}
+
+.media-detail span{
+  margin-right: 3%;
+  color: black;
+}
+
+.user-detail-menu{
+  padding: 3% 10% 3% 3%;
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.set-up{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.set-up a{
+  color: rgba(59, 130, 196, 0.5);
+}
+
+.set-up a:hover{
+  color: rgba(59, 130, 196, 1);
+}
+
+.user-detail-menu p{
+  margin: 2% 0;
+}
+
+/* microposts/microposts */
+
+.microposts-container{
+  width: 90%;
+  margin: 2% auto;
+  display: flex;
+}
+
+.micropost-container-left{
+  width: 80px;
+  text-align: center;
+}
+
+.micropost-container-left .mypage-article-img{
+  border-radius: 50%;
+}
+
+.user-name a{
+  color: rgba(0, 0, 255, 0.7);
+}
+
+.user-name a:hover{
+  color: rgba(0, 0, 255, 1);
+}
+
+.micropost-container-right {
+  position: relative;
+  display: inline-block;
+  margin: 1% 0 1% 15px;
+  padding: 7px 10px;
+  width: 65%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.micropost-container-right:before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+
+.posted-at-muted p{
+  color: rgba(110, 80, 100, 0.5);
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.micropost-contents p{
+  font-size: 0.9rem;
+  color: black;
+  text-align: left;
+}
+
+/*削除ボタン*/
+
+.delete-btn-wrapper{
+  position: absolute;
+  left: 90%;
+  bottom: 5%;
+}
+
+.delete-btn{
+  text-decoration: none;
+  color: white;
+  font-size: 0.7rem;
+  background-color: rgba(204, 0, 0, 0.8);
+}
+
+/* favoriteボタン */
+.favorite-btn-wrapper{
+  position: absolute;
+  left: 70%;
+  bottom: 5%;
+}
+
+.favorite-btn{
+  border: none;
+  border-radius: 15%;
+  color: white;
+  background-color: rgba(0, 0, 255, 0.7);
+  padding: 2% 5%;
+}
+
+.favorite-btn:hover{
+  background-color: rgba(0, 0, 255, 1);
+}
+
+.unfavorite-btn-wrapper{
+  position: absolute;
+  left: 65%;
+  bottom: 5%;
+}
+
+.unfavorite-btn{
+  border: none;
+  border-radius: 15%;
+  color: white;
+  background-color: rgba(204, 0, 0, 0.5);
+  padding: 2% 5%;
+}
+
+.unfavorite-btn:hover{
+  background-color: rgba(204, 0, 0, 1);
+}
+
+/* follow/unfollow-btn */
+.follow-btn{
+  border: none;
+  background-color: rgba(23, 96, 160, 0.5);
+  color: white;
+  padding: 5% 30%;
+}
+
+.follow-btn:hover{
+  background-color: rgba(23, 96, 160, 1);
+}
+
+.unfollow-btn{
+  border: none;
+  background-color: rgba(215, 0, 0, 0.7);
+  color: white;
+  padding: 5% 30%;
+}
+
+/* 退会ページ */
+.withdrawal-container{
+  text-align: center;
+  margin: 10% auto;
+  width: 80%;
+}
+
+.withdrawal-container p{
+  font-size: 0.8rem;
+  color: rgb(110, 80, 100);
+}
+.withdrawal-btn-wrapper{
+  text-align: right;
+  margin-top: 10%;
+}
+
+.withdrawal-btn{
+  text-decoration: none;
+  color: white;
+  background-color: rgba(204, 0, 0, 0.8);
+  padding: 2% 5%;
+  border-radius: 5%;
+  margin-right: 15%;
+}

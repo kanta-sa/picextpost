@@ -1,11 +1,12 @@
-<div class="text-center">
-  <h1><%= link_to @user.name, @user, class: 'btn' %></h1>
+<div class="relationships-container">
+  <h1><%= link_to @user.name, @user, class: 'user-name' %></h1>
+
+
+  <ul class="relationships-nav">
+    <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link active"><span class="badge badge-secondary"><%= @count_followings %></span>フォロー中</a></li>
+    <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link"><span class="badge badge-secondary"><%= @count_followers %></span>フォロワー</a></li>
+    <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link"><span class="badge badge-secondary"><%= @count_favorites %></span>お気に入り</a></li>
+  </ul>
+
+  <%= render 'users', users: @followings %>
 </div>
-
-<ul class="nav nav-tabs nav-justified mb-3">
-  <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link">Followings <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
-  <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link">Followers <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
-  <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link">お気に入り<span class="badge badge-secondary"><%= @count_favorites %></a></li>
-</ul>
-
-<%= render 'users', users: @followings %>

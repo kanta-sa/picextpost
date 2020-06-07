@@ -3,26 +3,26 @@
 <% if logged_in? %>
   <% unless current_user.admin? %>
     <% if @user.microposts.any? %>
-        <section style="padding: 20px 60px; background-image: url(<%= asset_path('message_box.png') %>); background-size: 100% 100%;">
+        <div class="news-box">
           <h1 class="text-center">お知らせ</h1>
           <ul>
             <% @user.microposts.each do |post| %>
-            <li><span><%= post.created_at.strftime("%Y/%m/%d") %>&nbsp;<%= post.content %></span></li>
+            <li><span><%= post.created_at.strftime("%Y/%m/%d")%></span><%= post.content%></li>
             <% end %>
           </ul>
-        </section>
+        </div>
       
     <% end %>
   
-    <div class="container text-center" style="margin-top: 50px;">
-      <h1>投稿お気に入りランキング</h1>
-      <table class="table table-bordered">
+    <div class="toppage-favorite">
+      <h2>投稿お気に入りランキング</h2>
+      <table class="favorite-table">
         <% @favorite_ranks.each do |micropost| %>
         <% i=i+1 %>
     
           <thead>
             <% if i == 1 %>
-            <tr>
+            <tr class="favorite-head">
               <th>順位</th>
               <th>ユーザ名</th>
               <th>内容</th>
@@ -32,21 +32,21 @@
           <tbody>
             <tr>
               <td>第1位</td>
-              <td><%= link_to micropost.user.name, micropost.user %></td>
+              <td><%= link_to micropost.user.name, micropost.user, class: 'user-name' %></td>
               <td><%= micropost.content %></td>
               <td><%= Favorite.where(micropost_id: micropost.id).count %></td>
             </tr>
             <% elsif i == 2 %>
             <tr>
               <td>第2位</td>
-              <td><%= link_to micropost.user.name, micropost.user %></td>
+              <td><%= link_to micropost.user.name, micropost.user, class: 'user-name' %></td>
               <td><%= micropost.content %></td>
               <td><%= Favorite.where(micropost_id: micropost.id).count %></td>
             </tr>
             <% elsif i == 3 %>
             <tr>
               <td>第3位</td>
-              <td><%= link_to micropost.user.name, micropost.user %></td>
+              <td><%= link_to micropost.user.name, micropost.user, class: 'user-name' %></td>
               <td><%= micropost.content %></td>
               <td><%= Favorite.where(micropost_id: micropost.id).count %></td>
             </tr>
@@ -56,15 +56,15 @@
       </table>
     </div>
   
-    <div class="container text-center" style="margin-top: 50px;">
-      <h1>フォロワーランキング</h1>
-      <table class="table table-bordered">
+    <div class="toppage-follower">
+      <h2>フォロワーランキング</h2>
+      <table class="follower-table">
         <% @follower_ranks.each do |user| %>
         <% j=j+1 %>
     
           <thead>
             <% if j == 1 %>
-            <tr>
+            <tr class="follower-head">
               <th>順位</th>
               <th>ユーザ名</th>
             </tr>
@@ -72,17 +72,17 @@
           <tbody>
             <tr>
               <td>第1位</td>
-              <td><%= link_to user.name, user %></td>
+              <td><%= link_to user.name, user, class: 'user-name' %></td>
             </tr>
             <% elsif j == 2 %>
             <tr>
               <td>第2位</td>
-              <td><%= link_to user.name, user %></td>
+              <td><%= link_to user.name, user, class: 'user-name' %></td>
             </tr>
             <% elsif j == 3 %>
             <tr>
               <td>第3位</td>
-              <td><%= link_to user.name, user %></td>
+              <td><%= link_to user.name, user, class: 'user-name' %></td>
             </tr>
             <% end %>
           </tbody>
@@ -97,24 +97,25 @@
     <% end %>
     
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the PicextPosts</h1>
-      <%= link_to 'Log in', login_path, class: 'btn btn-lg btn-primary' %></br></br>
-      <%= link_to 'Sign up', signup_path, class: 'btn btn-sm btn-primary' %>
+  <div class="toppage-header">
+    <h1>PicextPosts</h1>
+    <div class="toppage-btn-container">
+      <%= link_to 'ログイン', login_path, class: 'toppage-btn toppage-btn-left' %>
+      <%= link_to '新規登録', signup_path, class: 'toppage-btn toppage-btn-right' %>
     </div>
   </div>
   
-  <div class="container text-center" style="margin-top: 50px;">
-    <h1>投稿お気に入りランキング</h1>
-    <table class="table table-bordered">
+  <div class="toppage-favorite">
+    <h2>投稿お気に入りランキング</h2>
+    <table class="favorite-table">
       <% @favorite_ranks.each do |micropost| %>
       <% i=i+1 %>
     
         <thead>
           <% if i == 1 %>
-          <tr>
+          <tr class="favorite-head">
             <th>順位</th>
+            <th>ユーザ名</th>
             <th>内容</th>
             <th>お気に入り数</th>
           </tr>
@@ -122,18 +123,21 @@
         <tbody>
           <tr>
             <td>第1位</td>
+            <td><%= link_to micropost.user.name, micropost.user, class: 'user-name' %></td>
             <td><%= micropost.content %></td>
             <td><%= Favorite.where(micropost_id: micropost.id).count %></td>
           </tr>
           <% elsif i == 2 %>
           <tr>
             <td>第2位</td>
+            <td><%= link_to micropost.user.name, micropost.user, class: 'user-name' %></td>
             <td><%= micropost.content %></td>
             <td><%= Favorite.where(micropost_id: micropost.id).count %></td>
           </tr>
           <% elsif i == 3 %>
           <tr>
             <td>第3位</td>
+            <td><%= link_to micropost.user.name, micropost.user, class: 'user-name' %></td>
             <td><%= micropost.content %></td>
             <td><%= Favorite.where(micropost_id: micropost.id).count %></td>
           </tr>

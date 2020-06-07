@@ -7,9 +7,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">-->
 
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "layouts/navbar", :media => "all" %>
+    <%= stylesheet_link_tag "toppages/toppage", :media => "all" %>
+    <%= stylesheet_link_tag "users/users_show", :media => "all" %>
+    <%= stylesheet_link_tag "users/users_new", :media => "all" %>
+    <%= stylesheet_link_tag "users/follow", :media => "all" %>
+    <%= stylesheet_link_tag "prefectures/prefectures", :media => "all" %>
+    <%= stylesheet_link_tag "sessions/sessions", :media => "all" %>
+    
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>

@@ -1,7 +1,7 @@
-<div class="text-center">
-  <h1>退会ページ</h1>
+<div class="withdrawal-container">
+  <h1><%= @user.name %>の退会ページ</h1>
+  <p>※退会すると全てのデータが削除されます</p>
+  <div class="withdrawal-btn-wrapper">
+    <%= link_to "退会", user_path, method: :delete, data: { confirm: 'You sure?' }, class: 'withdrawal-btn' %>
+  </div>
 </div>
-
-<%= image_tag 'human.jpg', :size => '50x30' %>
-
-<%= link_to "退会する", user_path, method: :delete, data: { confirm: 'You sure?' }, class: 'btn btn-danger btn-sm' %>
