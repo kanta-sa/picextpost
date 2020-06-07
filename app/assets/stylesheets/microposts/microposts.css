@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.new-micropost-container{
+  text-align: center;
+  width: 70%;
+  margin: 2% auto;
+}
+
+.micropost-form{
+  margin: 3% 0;
+}
+
+.micropost-form .text-area{
+  width: 30%;
+}
+.micropost-btn-wrapper{
+  width: 40%;
+  text-align: right;
+  margin: 2% auto;
+}
+.micropost-btn{
+  border: none;
+  border-radius: 5%;
+  background-color: rgba(23, 96, 160, 0.6);
+  color: white;
+  padding: 2% 3%;
+}

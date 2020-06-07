@@ -1,13 +1,15 @@
-<%= image_tag 'human.jpg', :size => '50x30' %>
-<%= current_user.name %>
+<div class="new-micropost-container">
+  <h1>新規投稿ページ</h1>
 
-<%= form_with(model: @micropost, local: true) do |f| %>
-  <div class="form-group">
-    <%= f.label :content, 'Newpost' %>
-    <%= f.text_area :content, class: 'form-control', rows: 5 %>
-  </div>
-  
-  <%= f.file_field :image %>
-  
-  <%= f.submit 'Post', class: 'justify-content-end btn btn-sm btn-primary btn-block' %>
-<% end %>
+  <%= form_with(model: @micropost, local: true) do |f| %>
+    <div class="micropost-form">
+      <%= f.label :content, '内容' %>
+      <%= f.text_area :content, class: 'text-area', rows: 7 %>
+    </div>
+    
+    <%= f.file_field :image %>
+    <div class="micropost-btn-wrapper">
+      <%= f.submit 'Post', class: 'micropost-btn' %>
+    </div>
+  <% end %>
+</div>

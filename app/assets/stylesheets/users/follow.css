@@ -40,7 +40,7 @@ h1 .user-name{
   border-top: solid 2px black;
   border-bottom: solid 2px black;
   display: flex;
-  width: 70%;
+  width: 50%;
 }
 
 .follow-users-container:before, .follow-users-container:after{
