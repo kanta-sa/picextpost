@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+  
   def counts(user)
     @count_microposts = user.microposts.count
     @count_followings = user.followings.count

@@ -82,8 +82,8 @@ table, th, td{
   font-size: 3.0rem;
 }
 
-.toppage-btn-container{
-  margin: 7% 0;
+.toppage-btn-container-top{
+  margin: 3% 0;
 }
 
 .toppage-btn{
@@ -103,12 +103,22 @@ table, th, td{
   padding: 1% 2%;
 }
 
+.toppage-btn-center{
+  color: white;
+  background-color: rgba(58, 172, 173, 0.7);
+  padding: 1% 2%;
+}
+
 .toppage-btn-left:hover{
   background-color: rgba(0, 0, 255, 1);
 }
 
 .toppage-btn-right:hover{
   background-color: rgba(51, 153, 0, 1);
+}
+
+.toppage-btn-center:hover{
+  background-color: rgba(58, 172, 173, 1);
 }
 
 td .user-name{

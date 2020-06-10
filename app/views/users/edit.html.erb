@@ -37,8 +37,15 @@
       <%= f.hidden_field :image_cache %>
     <% end %>
       <%= f.file_field :image %>
-  <div class="edit-btn-wrapper">    
-    <%= f.submit '編集', class: 'edit-btn' %>
-  </div>
+  <% if current_user != guest_user %>
+    <div class="edit-btn-wrapper">    
+      <%= f.submit '編集', class: 'edit-btn' %>
+    </div>
+  <% else %>
+    <div class="edit-btn-wrapper">
+      <span class="edit-btn">編集</span>
+      <p class="warning-message">※ゲストユーザーのため編集操作はできません</p>
+    </div>
+  <% end %>
   <% end %> 
 </div>

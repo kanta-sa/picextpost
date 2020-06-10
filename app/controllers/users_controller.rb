@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   end
   
   def withdrawal
+    @user = User.find(params[:id])
   end
   
   def destroy

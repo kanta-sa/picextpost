@@ -99,9 +99,12 @@
 <% else %>
   <div class="toppage-header">
     <h1>PicextPosts</h1>
-    <div class="toppage-btn-container">
+    <div class="toppage-btn-container-top">
       <%= link_to 'ログイン', login_path, class: 'toppage-btn toppage-btn-left' %>
       <%= link_to '新規登録', signup_path, class: 'toppage-btn toppage-btn-right' %>
+    </div>
+    <div class="toppage-btn-container-bottom">
+      <%= link_to 'ゲストユーザー', guest_path, method: :post, class: 'toppage-btn toppage-btn-center' %>
     </div>
   </div>
   

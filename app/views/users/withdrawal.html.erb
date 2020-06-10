@@ -1,7 +1,16 @@
 <div class="withdrawal-container">
-  <h1><%= @user.name %>の退会ページ</h1>
-  <p>※退会すると全てのデータが削除されます</p>
-  <div class="withdrawal-btn-wrapper">
-    <%= link_to "退会", user_path, method: :delete, data: { confirm: 'You sure?' }, class: 'withdrawal-btn' %>
-  </div>
+  <% if current_user != guest_user %>
+    <h1><%= @user.name %>の退会ページ</h1>
+    <p>※退会すると全てのデータが削除されます</p>
+    <div class="withdrawal-btn-wrapper">
+      <%= link_to "退会", user_path, method: :delete, data: { confirm: 'You sure?' }, class: 'withdrawal-btn' %>
+    </div>
+  <% else %>
+    <h1><%= @user.name %>の退会ページ</h1>
+    <p>※退会すると全てのデータが削除されます</p>
+    <div class="withdrawal-btn-wrapper">
+      <span class="withdrawal-btn">退会</span>
+      <p class="warning-message">※ゲストユーザーのため退会操作はできません</p>
+    </div>
+  <% end %>
 </div>
